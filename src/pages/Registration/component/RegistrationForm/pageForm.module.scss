@@ -1,0 +1,18 @@
+.container {
+  margin: 0 auto;
+  max-width: 80%;
+  padding: 20px;
+}
+.wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  background-image: url(../../../../statics/pokemonBackraundRegistration.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.wrapper_login {
+  width: 100%;
+  background-color: white;
+}

@@ -1,0 +1,18 @@
+.card_container {
+  max-width: 300px;
+  width: 100%;
+  max-height: 400px;
+  height: 100%;
+  border: 2px solid #0048ff;
+  border-radius: 30px;
+  margin: 10px;
+}
+
+.card_img {
+  width: 80%;
+  image-rendering: pixelated;
+
+  img {
+    width: 100%;
+  }
+}
