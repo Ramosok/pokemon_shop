@@ -1,24 +1,27 @@
 {
   "files": {
-    "main.css": "/pokemon_shop/static/css/main.5b2cd264.css",
-    "main.js": "/pokemon_shop/static/js/main.849a29bf.js",
+    "main.css": "/pokemon_shop/static/css/main.dbfeec58.css",
+    "main.js": "/pokemon_shop/static/js/main.c74039a7.js",
     "static/media/pokemonBackraundRegistration.jpg": "/pokemon_shop/static/media/pokemonBackraundRegistration.73448fa6c91c278eedea.jpg",
-    "static/media/Eevee.png": "/pokemon_shop/static/media/Eevee.27d7c55d1083a3b205a8.png",
-    "static/media/HeaderLogo.png": "/pokemon_shop/static/media/HeaderLogo.0ce93c8340251d93626f.png",
-    "static/media/Bulbasaur.png": "/pokemon_shop/static/media/Bulbasaur.0b1c160358042fe140c2.png",
-    "static/media/Wartortle.png": "/pokemon_shop/static/media/Wartortle.eccd0f2c43ff18e65203.png",
-    "static/media/Squirtle.png": "/pokemon_shop/static/media/Squirtle.ab6e401e1e172cb77707.png",
-    "static/media/turtwig.png": "/pokemon_shop/static/media/turtwig.25d2144911710453b4b9.png",
-    "static/media/chikorita.png": "/pokemon_shop/static/media/chikorita.071819c2306d390203a2.png",
-    "static/media/pikachu.png": "/pokemon_shop/static/media/pikachu.cd135da7bb1a291569b6.png",
-    "static/media/Jigglypuff.jpg": "/pokemon_shop/static/media/Jigglypuff.ff9978cad4cd8c159f94.jpg",
-    "static/media/Charmeleon_AG_anime.png": "/pokemon_shop/static/media/Charmeleon_AG_anime.57854eae650aeef85ab9.png",
+    "static/media/Kalam-Bold.ttf": "/pokemon_shop/static/media/Kalam-Bold.c4671477e81c3c51ffc0.ttf",
+    "static/media/Kalam-Light.ttf": "/pokemon_shop/static/media/Kalam-Light.26d8dba039c5c77b1ac3.ttf",
+    "static/media/Scvirt.jpg": "/pokemon_shop/static/media/Scvirt.4d1b84d2a37bcc56d8e3.jpg",
+    "static/media/Alakazsm.jpg": "/pokemon_shop/static/media/Alakazsm.a92a0984b49cd41da121.jpg",
+    "static/media/Courgette-Regular.ttf": "/pokemon_shop/static/media/Courgette-Regular.f99d9948a486f6270149.ttf",
+    "static/media/Wulpiks.jpg": "/pokemon_shop/static/media/Wulpiks.022fc77073aa3410948f.jpg",
+    "static/media/Bulb.jpg": "/pokemon_shop/static/media/Bulb.b2bcb251cef3317537ec.jpg",
+    "static/media/TittleImg.jpg": "/pokemon_shop/static/media/TittleImg.654eef88efa9731b035b.jpg",
+    "static/media/Rattata.jpg": "/pokemon_shop/static/media/Rattata.8f5cb41087e0692e4711.jpg",
+    "static/media/Pigi.jpg": "/pokemon_shop/static/media/Pigi.9998c8ce27efa255907b.jpg",
+    "static/media/Charm.jpg": "/pokemon_shop/static/media/Charm.0bb7cc9d9111145ce254.jpg",
+    "static/media/Pika.jpg": "/pokemon_shop/static/media/Pika.5b5c615026a0b17d4e9e.jpg",
+    "static/media/shopping-cart.png": "/pokemon_shop/static/media/shopping-cart.96c73cb49987ccdf1154.png",
     "index.html": "/pokemon_shop/index.html",
-    "main.5b2cd264.css.map": "/pokemon_shop/static/css/main.5b2cd264.css.map",
-    "main.849a29bf.js.map": "/pokemon_shop/static/js/main.849a29bf.js.map"
+    "main.dbfeec58.css.map": "/pokemon_shop/static/css/main.dbfeec58.css.map",
+    "main.c74039a7.js.map": "/pokemon_shop/static/js/main.c74039a7.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b2cd264.css",
-    "static/js/main.849a29bf.js"
+    "static/css/main.dbfeec58.css",
+    "static/js/main.c74039a7.js"
   ]
 }
