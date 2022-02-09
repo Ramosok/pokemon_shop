@@ -1,5 +1,6 @@
 export const ROUTE_NAMES = {
-    HOME: '/',
-    REGISTRATION: '/registration',
-    PRODUCTS: '/products'
-}
+  HOME: "/pokemon_shop",
+  REGISTRATION: "/registration",
+  PRODUCTS: "/products",
+  PRODUCT_DETAILS: "/products/:id/:name",
+};

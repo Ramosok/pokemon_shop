@@ -1,13 +1,47 @@
 .login_form {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  background-color: #bdb76b;
-  width: 50%;
-  height: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000000;
+  width: 25%;
+  height: 35%;
   z-index: 1000;
   display: flex;
+  border-radius: 0 50px;
   justify-content: center;
   align-items: center;
+ Form{
+   width: 60%;
+   color: #ffffff;
+   position:relative;
+
+   input {
+     width: 100%;
+     outline:none;
+   }
+ }
+}
+.span_registration {
+  display: inline-block;
+  margin-right: 25px;
+}
+.login_btn {
+  background-color: #ffffff;
+  padding: 0 5px;
+  margin: 10px 0;
+}
+
+.input_password_btn {
+  justify-content: space-between;
+  display: flex;
+  .eye_btn {
+    align-self: flex-end;
+  }
+}
+.link_registration_btn {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 0 10px;
+  padding: 0 5px;
 }

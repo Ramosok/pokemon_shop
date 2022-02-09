@@ -1,32 +1,33 @@
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 
-import {Form} from "../../../form/shared/Form";
-import {initialValuesLogin, LoginSchema} from "../../config";
+import { Form } from "../../../form/shared/Form";
 
-import {ConfigurationFormLogin} from "../../container/ConfigurationFormLogin";
+import { initialValuesLogin, LoginSchema } from "../../config";
 
-import {SIGN_IN_REQUEST} from "../../actions";
+import { ConfigurationFormLogin } from "../../container/ConfigurationFormLogin";
 
-import styles from './../../login.module.scss'
+import { SIGN_IN_REQUEST } from "../../actions";
+
+import styles from "./../../login.module.scss";
 
 export const LoginForm = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const onLogin = (values,{ resetForm }) => {
-        dispatch(SIGN_IN_REQUEST(values))
-        resetForm()
-    }
+  const onLogin = (values, { resetForm }) => {
+    dispatch(SIGN_IN_REQUEST(values));
+    resetForm();
+  };
 
-    return (
-        <div className={styles.login_form}>
-            <Form
-                field={ConfigurationFormLogin}
-                validationSchema={LoginSchema}
-                initialValues={initialValuesLogin}
-                onSubmitCallback={(values, { resetForm }) => onLogin(values,{ resetForm })}
-
-            />
-        </div>
-    );
+  return (
+    <div className={styles.login_form}>
+      <Form
+        field={ConfigurationFormLogin}
+        validationSchema={LoginSchema}
+        initialValues={initialValuesLogin}
+        onSubmitCallback={(values, { resetForm }) =>
+          onLogin(values, { resetForm })
+        }
+      />
+    </div>
+  );
 };
-

@@ -1,18 +1,25 @@
 .card_container {
-  max-width: 300px;
+  max-width: 33.1%;
   width: 100%;
   max-height: 400px;
   height: 100%;
-  border: 2px solid #0048ff;
   border-radius: 30px;
-  margin: 10px;
+  margin: 2px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(225deg, rgb(113, 118, 109), rgb(246, 246, 246) 44%, rgb(239, 247, 110));
 }
 
-.card_img {
-  width: 80%;
+#card_img {
+  width: 50%;
   image-rendering: pixelated;
 
-  img {
-    width: 100%;
+  &:hover {
+    transform: scale(1.1);
   }
+}
+
+.formatted_name {
+  text-transform: capitalize;
 }

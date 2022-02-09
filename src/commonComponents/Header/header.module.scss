@@ -1,103 +1,107 @@
+@font-face {
+  font-family: 'Courgette-Regular';
+  src: local('Courgette-Regular'), url(./../../statics/fonts/Courgette-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Kalam-Bold';
+  src: local('Kalam-Bold'), url(./../../statics/fonts/Kalam-Bold.ttf) format('truetype');
+}
+
+.modal {
+
+}
+
 .header {
+  max-width: 1440px;
+  width: 100%;
+  max-height: 150px;
+  background-color: #ffffff;
+  font-size: 2em;
+}
+
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  width: 100%;
-  max-height: 160px;
-  height: 22vh;
-  background-color: #ffffff;
-  border-bottom: 7px solid #ffff00;
 }
 
 .logo {
   min-width: 20%;
   height: 100%;
-  background-image: url("../../statics/HeaderLogo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.closing_button {
-  font-size: 10px;
-  text-decoration: none;
-  display: inline-block;
-  margin: 5px;
-  color: black;
-  box-shadow: 0 0 0 2px black;
-  padding: 10px;
-  text-align: center;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
+  color: #000000;
+  font-family: Courgette-Regular, sans-serif;
+  padding: 10px 30px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    color: darkgoldenrod;
+
+    span {
+      color: #000000;
+    }
+  }
 
   span {
-    font-family: 'Montserrat', sans-serif;
-    position: relative;
-    z-index: 5;
+    color: darkgoldenrod;
   }
 }
 
-.closing_button:before, .closing_button:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
-
-.closing_button:before {
-  transform: translateX(-100%);
-  background: #e7cd12;
-  transition: transform .3s cubic-bezier(.55, .055, .675, .19);
-}
-
-.closing_button:after {
-  background: #413ad5;
-  transform: translateX(100%);
-  transition: transform .3s cubic-bezier(.16, .73, .58, .62) .3s;
-}
-
-.closing_button:hover:before, .closing_button:hover:after {
-  transform: translateX(0);
-}
-
-.user_action_container {
+.navbar {
   display: flex;
-  flex-direction: column-reverse;
+  justify-content:space-around;
+  width: 100%;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
 }
 
 .user_name {
   text-align: center;
+  font-family: Kalam-Bold, sans-serif;
 }
 
-.text_effect {
-  max-width: 250px;
-  font-size: 5vh;
-  text-shadow: 1px 1px 0 hsl(20, 100%, 50%),
-  2px 2px 0 hsl(20, 100%, 50%),
-  3px 3px 0 hsl(35, 100%, 50%),
-  4px 4px 0 hsl(35, 100%, 50%),
-  5px 5px 0 hsl(45, 100%, 50%),
-  6px 6px 0 hsl(45, 100%, 55%),
-  7px 7px 0 hsl(55, 100%, 60%),
-  8px 8px 0 hsl(55, 100%, 65%);
-  color: hsl(40, 94%, 48%);
-  transition: all 1s;
+.shoping_cart {
+  width: 50px;
+  height: 50px;
+  background-image: url(../../statics/shopping-cart.png);
+  background-size: contain;
+  margin: 10px 50px;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
-.text_effect:hover {
-  text-shadow: 1px -1px 0 hsl(244, 100%, 40%),
-  2px -2px 0 hsl(216, 100%, 40%),
-  3px -3px 0 hsl(223, 100%, 60%),
-  4px -4px 0 hsl(192, 100%, 60%),
-  5px -5px 0 hsl(270, 100%, 75%),
-  6px -6px 0 hsl(270, 100%, 80%),
-  7px -7px 0 hsl(260, 100%, 85%),
-  8px -8px 0 hsl(260, 100%, 90%);
-  color: hsl(232, 100%, 30%);
+.user_action_container {
+  margin: 5px 25px;
+  display: flex;
+  align-items: center;
+}
+
+.closing_button {
+  color: #000000;
+  font-size: 1rem;
+  font-family: Kalam-Bold, sans-serif;
+  &:hover {
+    transform: scale(1.1);
+    color: #0000ff;
+    text-shadow: 2px 2px 5px black;
+  }
+}
+
+.logout_btn {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0 5px;
+  border-radius: 10px;
+}
+a {
+  font-size: 15px;
+  color: #000000;
+  &:hover {
+    transform: scale(1.1);
+    color: #0000ff;
+    text-shadow: 2px 2px 5px black;
+  }
 }

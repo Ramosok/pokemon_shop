@@ -1,0 +1,14 @@
+.product_container {
+  width: 100%;
+  min-height: 3000px;
+  background-color: #e3a9a9;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.pagination {
+  background-color: #ffffff;
+  display:flex;
+  justify-content:center;
+}

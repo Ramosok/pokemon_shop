@@ -1,24 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Provider} from "react-redux";
-import {BrowserRouter} from "react-router-dom";
+import { StrictMode } from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
 
-import {configureStore} from "./store/configureStore";
+import { Layout } from "./commonComponents/Layout";
+import { Router } from "./routes/Router";
+import { Loader } from "./commonComponents/Loader";
 
-import {App} from './App';
+import { configureStore } from "./store/configureStore";
 
-import './index.css';
+import "./index.css";
 
 const store = configureStore();
+const persistor = persistStore(store);
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <BrowserRouter>
-                <App/>
-            </BrowserRouter>
-        </Provider>
-    </React.StrictMode>,
-    document.getElementById('root')
+  <StrictMode>
+    <Provider store={store}>
+      <PersistGate loading={<Loader />} persistor={persistor}>
+        <BrowserRouter>
+          <Layout>
+            <Router />
+          </Layout>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
+  </StrictMode>,
+  document.getElementById("root")
 );
-

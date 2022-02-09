@@ -1,29 +1,34 @@
-import {useState} from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
-import {HeaderLayout} from "../components/HeaderLayout";
+import { authLoginSelector } from "../selectors";
 
-import {LOCAL_STORAGE_USERNAME} from "../../../constants/localStorageData";
-
+import { HeaderLayout } from "../components/HeaderLayout";
 
 export const HeaderManagerContainer = () => {
-    const [display, setDisplay] = useState(false)
+  const { isAuth, userData, isLoading } = useSelector(authLoginSelector);
 
-    const onLogin = () => {
-        setDisplay(!display)
-    }
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const onLogOut = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
 
-    const onLogOut =() => {
-        localStorage.clear();
-        window.location.reload();
-
-    }
-
-    const userName = localStorage.getItem(LOCAL_STORAGE_USERNAME.USER_NAME);
-
-    return <HeaderLayout
-        display={display}
-        userName={userName}
-        onLogin={onLogin}
-        onLogOut={onLogOut}
+  return (
+    <HeaderLayout
+      open={open}
+      isAuth={isAuth}
+      isLoading={isLoading}
+      userData={userData}
+      onLogOut={onLogOut}
+      handleOpen={handleOpen}
+      handleClose={handleClose}
     />
+  );
 };

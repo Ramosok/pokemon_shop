@@ -1,15 +1,14 @@
 import api from "../api/config";
 
 export class ProductsService {
-    static instance = new ProductsService();
+  static instance = new ProductsService();
 
-    getProducts() {
-        return api.get('/products?page=1&limit=20');
-    }
+  getProducts(pageNumber) {
+    return api.get(`/products?page=${pageNumber}`);
+  }
 
-   /* getPokemonDetails(pokemonName) {
-        return api.get(`/pokemon/${pokemonName}`);
-    }*/
+  getProductDetails(id) {
+    return api.get(`/products/${id}`);
+  }
 }
-
 export default ProductsService.instance;
