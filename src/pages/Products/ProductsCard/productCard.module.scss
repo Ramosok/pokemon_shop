@@ -14,9 +14,11 @@
 #card_img {
   width: 50%;
   image-rendering: pixelated;
+  filter: saturate(0.5);
 
   &:hover {
     transform: scale(1.1);
+    filter: drop-shadow(1px 1px 15px black);
   }
 }
 

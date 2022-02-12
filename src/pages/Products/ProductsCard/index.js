@@ -1,5 +1,10 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
+
+import { useCart } from "../../../hooks";
+
+import { ROUTE_NAMES } from "../../../routes/routeNames";
+
 import {
   CardMedia,
   CardContent,
@@ -10,9 +15,15 @@ import {
 } from "@mui/material/";
 
 import styles from "./productCard.module.scss";
-import { ROUTE_NAMES } from "../../../routes/routeNames";
 
 export const ProductsCard = memo(({ id, name, image, price }) => {
+  const { disabled, handleAddCard, handleRemoveCard } = useCart({
+    id,
+    name,
+    image,
+    price,
+  });
+
   return (
     <Card id={id} className={styles.card_container}>
       <CardMedia
@@ -31,8 +42,16 @@ export const ProductsCard = memo(({ id, name, image, price }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Add Cart</Button>
-        <Button size="small">Remove Cart</Button>
+        <Button
+          size="small"
+          disabled={disabled}
+          onClick={() => handleAddCard(id, name, image, price)}
+        >
+          Add Cart
+        </Button>
+        <Button size="small" onClick={() => handleRemoveCard(id)}>
+          Remove Cart
+        </Button>
         <Link to={`${ROUTE_NAMES.PRODUCTS}/${id}/${name}`}>Details</Link>
       </CardActions>
     </Card>

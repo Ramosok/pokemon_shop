@@ -1,31 +1,32 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router";
 
-import { authLoginSelector } from "../selectors";
+import { useOpenCloseModal } from "../../../hooks";
+
+import { authLoginSelector, getCartSelector } from "../selectors";
 
 import { HeaderLayout } from "../components/HeaderLayout";
 
 export const HeaderManagerContainer = () => {
+  const dispatch = useDispatch();
+
   const { isAuth, userData, isLoading } = useSelector(authLoginSelector);
 
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const onLogOut = () => {
-    localStorage.clear();
-    window.location.reload();
-  };
+  const { cart } = useSelector(getCartSelector);
+
+  const path = useLocation();
+
+  const { open, handleOpen, handleClose, onLogOut } = useOpenCloseModal();
 
   return (
     <HeaderLayout
+      path={path}
       open={open}
       isAuth={isAuth}
       isLoading={isLoading}
       userData={userData}
+      cart={cart}
+      dispatch={dispatch}
       onLogOut={onLogOut}
       handleOpen={handleOpen}
       handleClose={handleClose}

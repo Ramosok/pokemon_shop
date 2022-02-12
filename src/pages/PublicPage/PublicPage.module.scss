@@ -9,6 +9,10 @@
   text-align: center;
   font-size: 1.3em;
 
+  img {
+    max-width: 60%;
+  }
+
   h2 {
     font-size: 1.6em;
   }
@@ -16,5 +20,8 @@
   h3 {
     font-size: 1.5em;
   }
+}
+.card_img {
+  max-width: 30% !important;
 }
 

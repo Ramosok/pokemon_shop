@@ -1,12 +1,22 @@
+import { Navigate } from "react-router";
+
 import { ProductsCard } from "../ProductsCard";
 import { Loader } from "../../../commonComponents/Loader";
 import { Pagination } from "./Pagination";
 
+import { ROUTE_NAMES } from "../../../routes/routeNames";
+
 import styles from "./../productPage.module.scss";
 
-export const ProductsLayout = ({ pokemonsList, page, handlePageChange }) => {
+export const ProductsLayout = ({
+  pokemonsList,
+  page,
+  handlePageChange,
+  isAuth,
+}) => {
   return (
     <div>
+      {!isAuth && <Navigate to={ROUTE_NAMES.REGISTRATION} replace={true} />}
       <Pagination
         className={styles.pagination}
         currentPage={+page}

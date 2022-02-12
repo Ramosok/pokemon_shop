@@ -2,6 +2,8 @@ import { ErrorMessage, Field } from "formik";
 
 import { selectData } from "../../../pages/Registration/config";
 
+import styles from "../../../pages/Registration/continer/form.module.scss";
+
 export const FormControl = ({
   name,
   label,
@@ -17,14 +19,7 @@ export const FormControl = ({
       {!select ? (
         <div className={className}>
           <label htmlFor={name}>{label}</label>
-          <h4
-            style={{
-              position: "absolute",
-              color: "red",
-              height: "10px",
-              margin: "-25px 70px",
-            }}
-          >
+          <h4>
             <ErrorMessage name={name} />
           </h4>
           <Field

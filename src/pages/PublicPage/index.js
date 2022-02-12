@@ -17,6 +17,7 @@ export const PublicPage = () => {
       <p>{infoPage.namesAndEvolutionBody}</p>
       {infoPage.pokemonHomePageList.map(({ name, description, img }) => (
         <PokemonCardHomePage
+          className={styles.card_img}
           key={name}
           name={name}
           description={description}

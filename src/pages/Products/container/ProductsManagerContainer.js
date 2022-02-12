@@ -1,31 +1,20 @@
-import { useCallback, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import { ProductsLayout } from "../components/ProductsLayout";
 import { ProductManagerSelector } from "../selectors";
-import { GET_POKEMON_REQUEST } from "../actions";
+
+import { usePagination } from "../../../hooks";
+import { authLoginSelector } from "../../Registration/selectors";
 
 export const ProductsManagerContainer = () => {
-  const dispatch = useDispatch();
   const { pokemonsList } = useSelector(ProductManagerSelector);
+  const { isAuth } = useSelector(authLoginSelector);
 
-  const initialPage = localStorage.getItem("page");
-
-  const [page, setPage] = useState(initialPage || 1);
-
-  const handlePageChange = useCallback((_, page) => {
-    setPage(page);
-  }, []);
-
-  useEffect(() => {
-    dispatch(GET_POKEMON_REQUEST(page));
-    return () => {
-      localStorage.setItem("page", page);
-    };
-  }, [dispatch, page]);
+  const { page, handlePageChange } = usePagination();
 
   return (
     <ProductsLayout
+      isAuth={isAuth}
       pokemonsList={pokemonsList}
       page={page}
       handlePageChange={handlePageChange}

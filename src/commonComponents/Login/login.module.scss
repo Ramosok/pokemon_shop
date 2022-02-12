@@ -1,31 +1,42 @@
 .login_form {
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #000000;
+  min-width: 200px;
   width: 25%;
-  height: 35%;
+  height: 300px;
   z-index: 1000;
   display: flex;
   border-radius: 0 50px;
   justify-content: center;
   align-items: center;
- Form{
-   width: 60%;
-   color: #ffffff;
-   position:relative;
 
-   input {
-     width: 100%;
-     outline:none;
-   }
- }
+  Form {
+    width: 60%;
+    color: #ffffff;
+    position: relative;
+
+    input {
+      width: 100%;
+      outline: none;
+    }
+  }
+
+  h4 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: red;
+  }
 }
+
 .span_registration {
   display: inline-block;
   margin-right: 25px;
 }
+
 .login_btn {
   background-color: #ffffff;
   padding: 0 5px;
@@ -33,12 +44,18 @@
 }
 
 .input_password_btn {
-  justify-content: space-between;
-  display: flex;
-  .eye_btn {
-    align-self: flex-end;
-  }
+  position: relative;
 }
+
+.eye_btn {
+  border: 2px solid;
+  height: 100%;
+  position: absolute;
+  background-color: #000000;
+  bottom: 0.5px;
+  right: 0;
+}
+
 .link_registration_btn {
   color: #ffffff;
   border: 1px solid #ffffff;

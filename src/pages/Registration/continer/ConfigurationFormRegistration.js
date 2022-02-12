@@ -46,15 +46,12 @@ export const ConfigurationFormRegistration = () => {
         label="*Password"
         placeholder="Password"
       />
-
-      <button
-        type="button"
+      <RemoveRedEyeIcon
+        className={styles.eye_btn}
+        color="action"
         onMouseDown={handleShowPassword}
         onMouseUp={handleHidePassword}
-      >
-        show password
-      </button>
-      <RemoveRedEyeIcon color="primary" />
+      />
       <FormControl
         className={styles.styles_form_registration}
         id={uuid()}
@@ -113,9 +110,7 @@ export const ConfigurationFormRegistration = () => {
       <button className={styles.btn} type="submit">
         Submit
       </button>
-      <p className={styles.styles_form_registration}>
-        * - Required fields to fill in
-      </p>
+      <p>* - Required fields to fill in</p>
     </>
   );
 };

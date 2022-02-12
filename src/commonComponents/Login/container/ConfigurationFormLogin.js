@@ -32,7 +32,6 @@ export const ConfigurationFormLogin = () => {
           label="Password"
           placeholder="Password"
         />
-
         <RemoveRedEyeIcon
           className={styles.eye_btn}
           onMouseDown={handleShowPassword}

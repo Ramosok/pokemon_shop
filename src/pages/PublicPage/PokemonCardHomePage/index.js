@@ -8,16 +8,16 @@ import {
 
 import styles from "./../PublicPage.module.scss";
 
-export const PokemonCardHomePage = ({ name, description, img }) => {
+export const PokemonCardHomePage = ({ name, description, img, className }) => {
   return (
     <Card sx={{ margin: "5px" }}>
       <CardActionArea
         sx={{ display: "flex", flexDescription: "column", padding: "30px" }}
       >
         <CardMedia
+          className={className}
           sx={{ maxWidth: "100%", padding: "6px" }}
           component="img"
-          height="500"
           image={img}
           alt=""
         />

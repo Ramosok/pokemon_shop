@@ -1,5 +1,27 @@
-export const ProductsDetailsLayout = ({ info }) => {
-  console.log(info, info.stats);
+import { ProductDiteilsCard } from "../ProductDiteilsCard";
+import { useCart } from "../../../hooks";
 
-  return <div>111</div>;
+export const ProductsDetailsLayout = ({ info }) => {
+  const { id, name, image, abilities, price, stats } = info;
+
+  const { disabled, handleAddCard, handleRemoveCard } = useCart({
+    id,
+    name,
+    image,
+    price,
+  });
+
+  return (
+    <ProductDiteilsCard
+      disabled={disabled}
+      id={id}
+      name={name}
+      image={image}
+      abilities={abilities}
+      price={price}
+      stats={stats}
+      handleAddCard={handleAddCard}
+      handleRemoveCard={handleRemoveCard}
+    />
+  );
 };

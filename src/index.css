@@ -23,7 +23,8 @@ code {
     font-family:Kalam-Light,sans-serif ;
 }
 body{
-    background-color: #a9a9a9;
+    background-color: black;
+    padding: 0 5px;
 }
 #root {
     font-size: 10px;

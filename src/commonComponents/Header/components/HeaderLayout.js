@@ -1,18 +1,23 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router";
 
 import { Loader } from "../../Loader";
+import { NavBarListHref } from "./NavBarListHref";
+import { LoginForm } from "../../Login/component/LoginForm";
 
 import { Modal, Box } from "@mui/material";
 
+import { GET_CART_REQUEST } from "../../../pages/Cart/actions";
 import { ROUTE_NAMES } from "../../../routes/routeNames";
 
-import { LoginForm } from "../../Login/component/LoginForm";
+import { hrefConfig } from "../hrefConfig";
 
 import styles from "../header.module.scss";
 
 export const HeaderLayout = ({
+  path,
+  cart,
+  dispatch,
   onLogOut,
   isAuth,
   isLoading,
@@ -21,11 +26,15 @@ export const HeaderLayout = ({
   handleOpen,
   handleClose,
 }) => {
-  const path = useLocation();
-
   useEffect(() => {
     handleClose();
-  }, [isAuth, path.pathname]);
+  }, [isAuth, path.pathname, handleClose]);
+
+  useEffect(() => {
+    if (isAuth) {
+      dispatch(GET_CART_REQUEST());
+    }
+  }, [cart, dispatch, isAuth]);
 
   return isLoading ? (
     <Loader />
@@ -54,28 +63,31 @@ export const HeaderLayout = ({
               </button>
             </div>
           )}
-          <div className={styles.shoping_cart}></div>
+          <Link to={ROUTE_NAMES.CART}>
+            {isAuth && (
+              <div className={styles.shoping_cart}>
+                {cart.itemsList?.length !== 0 && (
+                  <div className={styles.shoping_cart_length}>
+                    {cart.itemsList?.length}
+                  </div>
+                )}
+              </div>
+            )}
+          </Link>
         </div>
       </div>
       <div className={styles.navbar}>
-        <Link className={styles.closing_button} to={ROUTE_NAMES.PRODUCTS}>
-          <span>Pokemons Shop</span>
-        </Link>
+        {isAuth && (
+          <Link className={styles.closing_button} to={ROUTE_NAMES.PRODUCTS}>
+            <span>Pokemons Shop</span>
+          </Link>
+        )}
         <Link className={styles.closing_button} to={ROUTE_NAMES.HOME}>
           <span>Home</span>
         </Link>
-        <a href="https://watch.pokemon.com/ru-ru/" target="_blank">
-          Pokemon TV
-        </a>
-        <a
-          href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BA%D0%B5%D0%BC%D0%BE%D0%BD"
-          target="_blank"
-        >
-          Pokemon Wiki
-        </a>
-        <a href="https://gamer-info.com/game-series/pokemon/" target="_blank">
-          Pokemon Game
-        </a>
+        {hrefConfig.map(({ title, href }) => (
+          <NavBarListHref key={title} title={title} href={href} />
+        ))}
       </div>
     </header>
   );

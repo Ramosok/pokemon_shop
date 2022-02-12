@@ -7,6 +7,8 @@ import { RegistrationFrom } from "../pages/Registration/component/RegistrationFo
 import { ProductsManagerContainer } from "../pages/Products/container/ProductsManagerContainer";
 import { ProductsDetailsPageManager } from "../pages/ProductsDiteils/container/ProductsDetailsPageManager";
 
+import { Cart } from "../pages/Cart/Cart";
+
 export const Router = () => {
   return (
     <Routes>
@@ -20,6 +22,7 @@ export const Router = () => {
         path={ROUTE_NAMES.PRODUCT_DETAILS}
         element={<ProductsDetailsPageManager />}
       />
+      <Route path={ROUTE_NAMES.CART} element={<Cart />} />
     </Routes>
   );
 };

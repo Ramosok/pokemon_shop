@@ -1,15 +1,32 @@
 .container {
+  position: relative;
   margin: 0 auto;
   max-width: 80%;
   padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 10px 10px 10px 10px #000000;
+
+  h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  p{
+    font-size: 20px;
+  }
+  h4 {
+    padding-right: 30px;
+    color: red;
+    float: right;
+    font-weight: bold;
+    font-size: 15px;
+  }
 }
+
+
 .wrapper {
   width: 100%;
-  box-sizing: border-box;
-  background-image: url(../../../../statics/pokemonBackraundRegistration.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  padding: 10px;
+  background-color: lightcyan;
 }
 
 .wrapper_login {

@@ -1,6 +1,7 @@
 export const ROUTE_NAMES = {
-  HOME: "/pokemon_shop",
+  HOME: "/",
   REGISTRATION: "/registration",
   PRODUCTS: "/products",
   PRODUCT_DETAILS: "/products/:id/:name",
+  CART: "/cart",
 };
