@@ -1,27 +1,32 @@
 {
   "files": {
-    "main.css": "/pokemon_shop/static/css/main.dbfeec58.css",
-    "main.js": "/pokemon_shop/static/js/main.c74039a7.js",
-    "static/media/pokemonBackraundRegistration.jpg": "/pokemon_shop/static/media/pokemonBackraundRegistration.73448fa6c91c278eedea.jpg",
+    "main.css": "/pokemon_shop/static/css/main.482cfdf0.css",
+    "main.js": "/pokemon_shop/static/js/main.52fc512c.js",
     "static/media/Kalam-Bold.ttf": "/pokemon_shop/static/media/Kalam-Bold.c4671477e81c3c51ffc0.ttf",
     "static/media/Kalam-Light.ttf": "/pokemon_shop/static/media/Kalam-Light.26d8dba039c5c77b1ac3.ttf",
+    "static/media/DEFENSE.png": "/pokemon_shop/static/media/DEFENSE.6728a28d27f40c3020ba.png",
+    "static/media/ATTACK.png": "/pokemon_shop/static/media/ATTACK.88712fb9ee2db13e7d1e.png",
     "static/media/Scvirt.jpg": "/pokemon_shop/static/media/Scvirt.4d1b84d2a37bcc56d8e3.jpg",
     "static/media/Alakazsm.jpg": "/pokemon_shop/static/media/Alakazsm.a92a0984b49cd41da121.jpg",
     "static/media/Courgette-Regular.ttf": "/pokemon_shop/static/media/Courgette-Regular.f99d9948a486f6270149.ttf",
+    "static/media/SPEED.png": "/pokemon_shop/static/media/SPEED.a5c2dd4405929cff0652.png",
     "static/media/Wulpiks.jpg": "/pokemon_shop/static/media/Wulpiks.022fc77073aa3410948f.jpg",
+    "static/media/SPECIAL_DEFFENSE.png": "/pokemon_shop/static/media/SPECIAL_DEFFENSE.5c3994d95ad2e0d3e900.png",
+    "static/media/SPECIAL_ATTACK.png": "/pokemon_shop/static/media/SPECIAL_ATTACK.d08160f703d5154d01ab.png",
     "static/media/Bulb.jpg": "/pokemon_shop/static/media/Bulb.b2bcb251cef3317537ec.jpg",
     "static/media/TittleImg.jpg": "/pokemon_shop/static/media/TittleImg.654eef88efa9731b035b.jpg",
     "static/media/Rattata.jpg": "/pokemon_shop/static/media/Rattata.8f5cb41087e0692e4711.jpg",
+    "static/media/HP.png": "/pokemon_shop/static/media/HP.f0195714ebf3f1fd1868.png",
     "static/media/Pigi.jpg": "/pokemon_shop/static/media/Pigi.9998c8ce27efa255907b.jpg",
     "static/media/Charm.jpg": "/pokemon_shop/static/media/Charm.0bb7cc9d9111145ce254.jpg",
     "static/media/Pika.jpg": "/pokemon_shop/static/media/Pika.5b5c615026a0b17d4e9e.jpg",
     "static/media/shopping-cart.png": "/pokemon_shop/static/media/shopping-cart.96c73cb49987ccdf1154.png",
     "index.html": "/pokemon_shop/index.html",
-    "main.dbfeec58.css.map": "/pokemon_shop/static/css/main.dbfeec58.css.map",
-    "main.c74039a7.js.map": "/pokemon_shop/static/js/main.c74039a7.js.map"
+    "main.482cfdf0.css.map": "/pokemon_shop/static/css/main.482cfdf0.css.map",
+    "main.52fc512c.js.map": "/pokemon_shop/static/js/main.52fc512c.js.map"
   },
   "entrypoints": [
-    "static/css/main.dbfeec58.css",
-    "static/js/main.c74039a7.js"
+    "static/css/main.482cfdf0.css",
+    "static/js/main.52fc512c.js"
   ]
 }
