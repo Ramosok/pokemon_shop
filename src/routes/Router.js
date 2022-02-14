@@ -6,8 +6,7 @@ import { PublicPage } from "../pages/PublicPage";
 import { RegistrationFrom } from "../pages/Registration/component/RegistrationForm";
 import { ProductsManagerContainer } from "../pages/Products/container/ProductsManagerContainer";
 import { ProductsDetailsPageManager } from "../pages/ProductsDiteils/container/ProductsDetailsPageManager";
-
-import { Cart } from "../pages/Cart/Cart";
+import { CartManagerPage } from "../pages/Cart/conteiners/CartManagerPage";
 
 export const Router = () => {
   return (
@@ -22,7 +21,7 @@ export const Router = () => {
         path={ROUTE_NAMES.PRODUCT_DETAILS}
         element={<ProductsDetailsPageManager />}
       />
-      <Route path={ROUTE_NAMES.CART} element={<Cart />} />
+      <Route path={ROUTE_NAMES.CART} element={<CartManagerPage />} />
     </Routes>
   );
 };

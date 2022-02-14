@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router";
 
@@ -17,7 +18,7 @@ import { authLoginSelector, authRegistrationSelector } from "../../selectors";
 
 import styles from "./pageForm.module.scss";
 
-export const RegistrationFrom = () => {
+export const RegistrationFrom = memo(() => {
   const dispatch = useDispatch();
   const { errors } = useSelector(authRegistrationSelector);
   const { isAuth } = useSelector(authLoginSelector);
@@ -46,4 +47,4 @@ export const RegistrationFrom = () => {
       </div>
     </div>
   );
-};
+});

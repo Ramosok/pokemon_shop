@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { Loader } from "../../Loader";
@@ -7,7 +6,6 @@ import { LoginForm } from "../../Login/component/LoginForm";
 
 import { Modal, Box } from "@mui/material";
 
-import { GET_CART_REQUEST } from "../../../pages/Cart/actions";
 import { ROUTE_NAMES } from "../../../routes/routeNames";
 
 import { hrefConfig } from "../hrefConfig";
@@ -15,9 +13,7 @@ import { hrefConfig } from "../hrefConfig";
 import styles from "../header.module.scss";
 
 export const HeaderLayout = ({
-  path,
   cart,
-  dispatch,
   onLogOut,
   isAuth,
   isLoading,
@@ -26,16 +22,6 @@ export const HeaderLayout = ({
   handleOpen,
   handleClose,
 }) => {
-  useEffect(() => {
-    handleClose();
-  }, [isAuth, path.pathname, handleClose]);
-
-  useEffect(() => {
-    if (isAuth) {
-      dispatch(GET_CART_REQUEST());
-    }
-  }, [cart, dispatch, isAuth]);
-
   return isLoading ? (
     <Loader />
   ) : (
@@ -66,7 +52,7 @@ export const HeaderLayout = ({
           <Link to={ROUTE_NAMES.CART}>
             {isAuth && (
               <div className={styles.shoping_cart}>
-                {cart.itemsList?.length !== 0 && (
+                {cart.itemsList?.length > 0 && (
                   <div className={styles.shoping_cart_length}>
                     {cart.itemsList?.length}
                   </div>

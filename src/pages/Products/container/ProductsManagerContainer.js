@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { ProductsLayout } from "../components/ProductsLayout";
 import { ProductManagerSelector } from "../selectors";
 
-import { usePagination } from "../../../hooks";
+import { useCart, usePagination } from "../../../hooks";
 import { authLoginSelector } from "../../Registration/selectors";
 
 export const ProductsManagerContainer = () => {
@@ -11,9 +11,12 @@ export const ProductsManagerContainer = () => {
   const { isAuth } = useSelector(authLoginSelector);
 
   const { page, handlePageChange } = usePagination();
-
+  const { disabled, handleAddCard, handleRemoveCard } = useCart({});
   return (
     <ProductsLayout
+      disabled={disabled}
+      handleAddCard={handleAddCard}
+      handleRemoveCard={handleRemoveCard}
       isAuth={isAuth}
       pokemonsList={pokemonsList}
       page={page}

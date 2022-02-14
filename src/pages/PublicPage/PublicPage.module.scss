@@ -25,3 +25,10 @@
   max-width: 30% !important;
 }
 
+@media (max-width: 772px) {
+  .container {
+    display:flex !important;
+    flex-direction: column !important;
+  }
+}
+

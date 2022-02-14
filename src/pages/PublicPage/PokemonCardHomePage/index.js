@@ -6,12 +6,20 @@ import {
   CardContent,
 } from "@mui/material";
 
-import styles from "./../PublicPage.module.scss";
-
-export const PokemonCardHomePage = ({ name, description, img, className }) => {
+export const PokemonCardHomePage = ({
+  name,
+  description,
+  img,
+  className,
+  container,
+}) => {
   return (
-    <Card sx={{ margin: "5px" }}>
+    <Card
+      sx={{ margin: "5px" }}
+      //className={container}
+    >
       <CardActionArea
+        className={container}
         sx={{ display: "flex", flexDescription: "column", padding: "30px" }}
       >
         <CardMedia

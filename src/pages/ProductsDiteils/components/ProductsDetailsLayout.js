@@ -1,15 +1,12 @@
 import { ProductDiteilsCard } from "../ProductDiteilsCard";
-import { useCart } from "../../../hooks";
 
-export const ProductsDetailsLayout = ({ info }) => {
+export const ProductsDetailsLayout = ({
+  info,
+  disabled,
+  handleAddCard,
+  handleRemoveCard,
+}) => {
   const { id, name, image, abilities, price, stats } = info;
-
-  const { disabled, handleAddCard, handleRemoveCard } = useCart({
-    id,
-    name,
-    image,
-    price,
-  });
 
   return (
     <ProductDiteilsCard

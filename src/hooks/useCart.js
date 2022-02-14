@@ -1,8 +1,12 @@
 import { useDispatch } from "react-redux";
 import { useCallback, useState } from "react";
-import { DELETE_CART_REQUEST, POST_CART_REQUEST } from "../pages/Cart/actions";
+import {
+  DELETE_CART_REQUEST,
+  GET_CART_REQUEST,
+  POST_CART_REQUEST,
+} from "../pages/Cart/actions";
 
-export const useCart = ({ id, name, image, price }) => {
+export const useCart = () => {
   const dispatch = useDispatch();
 
   const [disabled, setDisabled] = useState(false);
@@ -17,6 +21,7 @@ export const useCart = ({ id, name, image, price }) => {
         price: price,
       };
       dispatch(POST_CART_REQUEST(item));
+      dispatch(GET_CART_REQUEST());
       setDisabled(true);
     },
     [dispatch]
@@ -24,6 +29,7 @@ export const useCart = ({ id, name, image, price }) => {
   const handleRemoveCard = useCallback(
     (id) => {
       dispatch(DELETE_CART_REQUEST(id));
+      dispatch(GET_CART_REQUEST());
       setDisabled(false);
     },
     [dispatch]

@@ -11,8 +11,11 @@ import styles from "./../productPage.module.scss";
 export const ProductsLayout = ({
   pokemonsList,
   page,
-  handlePageChange,
   isAuth,
+  disabled,
+  handlePageChange,
+  handleAddCard,
+  handleRemoveCard,
 }) => {
   return (
     <div>
@@ -32,6 +35,9 @@ export const ProductsLayout = ({
               name={name}
               image={image}
               price={price}
+              disabled={disabled}
+              handleAddCard={handleAddCard}
+              handleRemoveCard={handleRemoveCard}
             />
           ))
         ) : (
