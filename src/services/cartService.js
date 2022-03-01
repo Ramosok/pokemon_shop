@@ -9,6 +9,9 @@ export class cartService {
   addToCart(item) {
     return api.post("/cart/item", item);
   }
+  patchToCart({ id, quantity }) {
+    return api.patch("/cart/item", { id, quantity });
+  }
   removeFromCart(id) {
     return api.delete(`/cart/item/${id}`);
   }

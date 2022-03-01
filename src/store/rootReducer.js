@@ -8,11 +8,8 @@ import { authReducerRegistration } from "../pages/Registration/reducers";
 import { authReducer } from "../commonComponents/Login/reducers";
 import { pokemonPageReducer } from "../pages/Products/reducers";
 import { pokemonsDetailsReducer } from "../pages/ProductsDiteils/reducers";
-import {
-  addCartReducer,
-  deleteCartReducer,
-  getCartReducer,
-} from "../pages/Cart/reducers";
+import { cartReducer } from "../pages/Cart/reducers";
+import { orderPageReducer } from "../pages/User/reducers";
 
 const authBlackListedFields = createBlacklistFilter("auth", [
   "isLoading",
@@ -31,9 +28,8 @@ const rootReducer = combineReducers({
   authRegistration: authReducerRegistration,
   pokemonPage: pokemonPageReducer,
   pokemonsDetails: pokemonsDetailsReducer,
-  getCart: getCartReducer,
-  addCart: addCartReducer,
-  removeCart: deleteCartReducer,
+  cart: cartReducer,
+  order: orderPageReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

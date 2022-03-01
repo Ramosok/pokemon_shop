@@ -7,30 +7,26 @@ import { authLoginSelector, getCartSelector } from "../selectors";
 
 import { HeaderLayout } from "../components/HeaderLayout";
 import { useEffect } from "react";
-import { GET_CART_REQUEST } from "../../../pages/Cart/actions";
 
 export const HeaderManagerContainer = () => {
   const dispatch = useDispatch();
 
   const { isAuth, userData, isLoading } = useSelector(authLoginSelector);
 
-  const { cart } = useSelector(getCartSelector);
+  const { itemsInCart } = useSelector(getCartSelector);
 
   const path = useLocation();
 
   const { open, handleOpen, handleClose, onLogOut } = useOpenCloseModal();
-  useEffect(() => {
-    dispatch(GET_CART_REQUEST());
-  }, [dispatch]);
 
   useEffect(() => {
     handleClose();
-  }, [isAuth, path.pathname]);
+  }, [handleClose, isAuth, path.pathname]);
   return (
     <HeaderLayout
       open={open}
       userData={userData}
-      cart={cart}
+      itemsInCart={itemsInCart}
       dispatch={dispatch}
       isAuth={isAuth}
       isLoading={isLoading}

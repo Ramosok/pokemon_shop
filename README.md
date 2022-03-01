@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+Краткое содержание приложения:
+1.	Страница Регистрации
+2.	Страница Входа в приложение
+3.	Страница Товаров
+4.	Страница ТоварА
+5.	Страница Корзины
+6.	Страница Личного Кабинета Пользователя
+Подробное описание постраничной функциональности:
+1.	Регистрация:
+-	На данной странице должна быть форма для регистрации пользователя.
+-	Форма должна валидироваться. Кнопка, submit должна быть заблокирована, пока все поля формы не будут заполнены корректно.
+-	При успешном создании аккаунта должно быть показано сообщение, в котором говорится о том, что аккаунт создан и кнопкой, которая будет перенаправлять юзера на страницу для входа.
+2.	Страница входа (Логин):
+-	Аналогично, должна быть валидация полей 
+-	При успешном входе, перенаправлять пользователя на страницу товаров, в ином случае очистить форму и вывести ошибку
+3.	Страница товаров:
+-	При попадании на данную страницу должна происходить загрузка товаров и отображение полученных товаров
+-	Также, на данной странице должна быть реализована пагинация
+-	Элемент товара должен иметь вид:  Изображение товара, название, стоимость, кнопка добавить в корзину, кнопка для перехода на отдельную страницу кликнутого товара
+4.	Страница товара:
+-	На отдельной странице товара должна быть выведена информация по текущему товару, и так же кнопка добавить в корзину
+5.	Страница корзины:
+-	При входе на страницу корзины должен осуществляться запрос на ранее добавленные товары
+-	Каждый элемент корзины должен иметь картинку, название, возможность изменять количество (счётчик),  стоимость
+-	Так же в корзине должна быть отображена текущая сумма заказа, которая высчитывается в зависимости от находящихся там продуктов
+-	Кнопка “Подтвердить заказ”, при нажатии на которую будет происходить создание заказа. При успешном создании заказа, вывести сообщение об этом и очистить корзину. 
+-	ТАКЖЕ в хедере должен быть значок корзины, с отображением количества элементов в ней на данный момент
+6.	Личный кабинет пользователя: 
+-	На данной странице вывести информацию об авторизированном пользователе и список совершённых им заказов
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Дополнительная информация:
+В вашем приложении все роуты, кроме страницы логина и регистрации должны быть ПРИВАТНЫМИ.
+Обязательно использовать Material UI
+Архитектура приложения должна быть строго такая, как я вам объяснял в течение всего обучения.
+Ссылка на документацию к API: https://demo-api.it-shatle.by/api/
 
-## Available Scripts
+P.S. Всем удачи и успехов. Я в вас верю. Дедлайн 13 августа 2021 года до 15:00.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

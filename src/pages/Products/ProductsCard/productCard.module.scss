@@ -1,6 +1,7 @@
 .card_container {
   position:relative;
   max-width: 33.1%;
+  min-width: 32%;
   width: 100%;
   max-height: 500px;
   height: 100%;
@@ -15,10 +16,12 @@
       display:block;
     }
   }
+
 }
 
+
 #card_img {
-  width: 50%;
+  width: 60%;
   image-rendering: pixelated;
   filter: saturate(0.5);
 

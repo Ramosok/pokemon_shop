@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export const useShowAndHidePassword = () => {
   const [typePassword, setTypePassword] = useState("password");
 
-  const handleShowPassword = () => {
+  const handleShowPassword = useCallback(() => {
     setTypePassword("text");
-  };
-  const handleHidePassword = () => {
+  }, []);
+  const handleHidePassword = useCallback(() => {
     setTypePassword("password");
-  };
+  }, []);
   return {
     typePassword,
     handleShowPassword,

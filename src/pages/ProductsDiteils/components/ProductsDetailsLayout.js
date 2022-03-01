@@ -2,7 +2,8 @@ import { ProductDiteilsCard } from "../ProductDiteilsCard";
 
 export const ProductsDetailsLayout = ({
   info,
-  disabled,
+  isDisabled,
+  isLoading,
   handleAddCard,
   handleRemoveCard,
 }) => {
@@ -10,13 +11,14 @@ export const ProductsDetailsLayout = ({
 
   return (
     <ProductDiteilsCard
-      disabled={disabled}
       id={id}
       name={name}
       image={image}
       abilities={abilities}
       price={price}
       stats={stats}
+      isLoading={isLoading}
+      isDisabled={isDisabled}
       handleAddCard={handleAddCard}
       handleRemoveCard={handleRemoveCard}
     />

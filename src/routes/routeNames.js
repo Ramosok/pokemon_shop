@@ -4,4 +4,6 @@ export const ROUTE_NAMES = {
   PRODUCTS: "/products",
   PRODUCT_DETAILS: "/products/:id/:name",
   CART: "/cart",
+  USER: "/user",
+  NOTFOUND: "*",
 };

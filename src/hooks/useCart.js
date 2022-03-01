@@ -1,42 +1,71 @@
-import { useDispatch } from "react-redux";
-import { useCallback, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { useCallback } from "react";
 import {
   DELETE_CART_REQUEST,
   GET_CART_REQUEST,
-  POST_CART_REQUEST,
+  ADD_TO_CART_REQUEST,
+  PATCH_TO_CART_REQUEST,
 } from "../pages/Cart/actions";
+import { POST_ORDER_REQUEST } from "../pages/User/actions";
+
+import { getCartSelector } from "../commonComponents/Header/selectors";
 
 export const useCart = () => {
   const dispatch = useDispatch();
 
-  const [disabled, setDisabled] = useState(false);
+  const { itemsInCart } = useSelector(getCartSelector);
+
+  const isDisabled = useCallback(
+    (id) => {
+      return !!itemsInCart.find((product) => product.id === id);
+    },
+    [itemsInCart]
+  );
+
+  const onGetCart = useCallback(() => {
+    dispatch(GET_CART_REQUEST());
+  }, [dispatch]);
 
   const handleAddCard = useCallback(
-    (id, name, image, price) => {
+    ({ id, name, image, price }) => {
       const item = {
-        id: id,
-        name: name,
-        image: image,
+        id,
+        name,
+        image,
         quantity: 1,
-        price: price,
+        price,
       };
-      dispatch(POST_CART_REQUEST(item));
-      dispatch(GET_CART_REQUEST());
-      setDisabled(true);
+      dispatch(ADD_TO_CART_REQUEST(item));
     },
     [dispatch]
   );
   const handleRemoveCard = useCallback(
     (id) => {
       dispatch(DELETE_CART_REQUEST(id));
-      dispatch(GET_CART_REQUEST());
-      setDisabled(false);
+    },
+    [dispatch]
+  );
+  const updatedItemQuantity = useCallback(
+    ({ id, quantity }) => {
+      if (quantity >= 1) {
+        dispatch(PATCH_TO_CART_REQUEST({ id, quantity }));
+      }
+    },
+    [dispatch]
+  );
+  const handleOrderSubmit = useCallback(
+    ({ customerId, totalPrice, itemsInCart }) => {
+      dispatch(POST_ORDER_REQUEST({ customerId, totalPrice, itemsInCart }));
     },
     [dispatch]
   );
   return {
-    disabled,
+    onGetCart,
     handleAddCard,
     handleRemoveCard,
+    handleOrderSubmit,
+    updatedItemQuantity,
+    isDisabled,
   };
 };

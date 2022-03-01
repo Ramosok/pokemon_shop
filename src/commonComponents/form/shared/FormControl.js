@@ -1,4 +1,5 @@
 import { ErrorMessage, Field } from "formik";
+import PropTypes from "prop-types";
 
 import { selectData } from "../../../pages/Registration/config";
 
@@ -45,4 +46,14 @@ export const FormControl = ({
       )}
     </>
   );
+};
+FormControl.propTypes = {
+  name: PropTypes.string,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  type: PropTypes.string,
+  disabled: PropTypes.bool,
+  select: PropTypes.string,
+  id: PropTypes.string,
+  className: PropTypes.string,
 };

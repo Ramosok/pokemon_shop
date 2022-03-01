@@ -12,9 +12,9 @@ import { GET_POKEMONS_DETAILS_REQUEST } from "../actions";
 
 export const ProductsDetailsPageManager = () => {
   const dispatch = useDispatch();
-  const { info } = useSelector(pokemonsDetailsSelector);
+  const { info, isLoading } = useSelector(pokemonsDetailsSelector);
   const { id } = useParams();
-  const { disabled, handleAddCard, handleRemoveCard } = useCart({});
+  const { handleAddCard, handleRemoveCard, isDisabled } = useCart();
 
   useEffect(() => {
     dispatch(GET_POKEMONS_DETAILS_REQUEST(id));
@@ -23,7 +23,8 @@ export const ProductsDetailsPageManager = () => {
   return (
     <ProductsDetailsLayout
       info={info}
-      disabled={disabled}
+      isDisabled={isDisabled}
+      isLoading={isLoading}
       handleAddCard={handleAddCard}
       handleRemoveCard={handleRemoveCard}
     />

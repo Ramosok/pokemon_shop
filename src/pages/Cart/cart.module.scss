@@ -1,9 +1,14 @@
 .cart_container {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #ffffff;
+  font-size: 2rem;
 
   h1 {
     text-align: center;
     font-size: 30px;
   }
+}
+.btn_cart {
+  display:flex;
+  justify-content: center;
 }

@@ -1,21 +1,16 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
+import { Buttons } from "../../../commonComponents/Buttons";
 import { ROUTE_NAMES } from "../../../routes/routeNames";
 
-import {
-  CardMedia,
-  CardContent,
-  Typography,
-  CardActions,
-  Button,
-  Card,
-} from "@mui/material/";
+import { CardMedia, CardContent, Typography, Card } from "@mui/material/";
 
 import styles from "./productCard.module.scss";
 
 export const ProductsCard = memo(
-  ({ id, name, image, price, disabled, handleAddCard, handleRemoveCard }) => {
+  ({ id, name, image, price, handleAddCard, handleRemoveCard, isDisabled }) => {
     return (
       <Card id={id} className={styles.card_container}>
         <Link id={styles.card_img} to={`${ROUTE_NAMES.PRODUCTS}/${id}/${name}`}>
@@ -31,20 +26,26 @@ export const ProductsCard = memo(
             Price - {price}$
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button
-            size="small"
-            disabled={disabled}
-            onClick={() => handleAddCard(id, name, image, price)}
-          >
-            Add Cart
-          </Button>
-          <Button size="small" onClick={() => handleRemoveCard(id)}>
-            Remove Cart
-          </Button>
-        </CardActions>
+        <Buttons
+          id={id}
+          name={name}
+          image={image}
+          price={price}
+          isDisabled={isDisabled}
+          handleAddCard={handleAddCard}
+          handleRemoveCard={handleRemoveCard}
+        />
         <span className={styles.pop_up}>click to diteils</span>
       </Card>
     );
   }
 );
+ProductsCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  handleAddCard: PropTypes.func.isRequired,
+  handleRemoveCard: PropTypes.func.isRequired,
+  isDisabled: PropTypes.func.isRequired,
+};

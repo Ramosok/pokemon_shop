@@ -1,25 +1,21 @@
-import { Navigate } from "react-router";
+import PropTypes, { arrayOf } from "prop-types";
 
 import { ProductsCard } from "../ProductsCard";
 import { Loader } from "../../../commonComponents/Loader";
 import { Pagination } from "./Pagination";
-
-import { ROUTE_NAMES } from "../../../routes/routeNames";
 
 import styles from "./../productPage.module.scss";
 
 export const ProductsLayout = ({
   pokemonsList,
   page,
-  isAuth,
-  disabled,
+  isDisabled,
   handlePageChange,
   handleAddCard,
   handleRemoveCard,
 }) => {
   return (
     <div>
-      {!isAuth && <Navigate to={ROUTE_NAMES.REGISTRATION} replace={true} />}
       <Pagination
         className={styles.pagination}
         currentPage={+page}
@@ -35,9 +31,9 @@ export const ProductsLayout = ({
               name={name}
               image={image}
               price={price}
-              disabled={disabled}
               handleAddCard={handleAddCard}
               handleRemoveCard={handleRemoveCard}
+              isDisabled={isDisabled}
             />
           ))
         ) : (
@@ -52,4 +48,12 @@ export const ProductsLayout = ({
       />
     </div>
   );
+};
+ProductsLayout.propTypes = {
+  pokemonsList: arrayOf(PropTypes.object).isRequired,
+  page: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  isDisabled: PropTypes.func.isRequired,
+  handlePageChange: PropTypes.func.isRequired,
+  handleAddCard: PropTypes.func.isRequired,
+  handleRemoveCard: PropTypes.func.isRequired,
 };

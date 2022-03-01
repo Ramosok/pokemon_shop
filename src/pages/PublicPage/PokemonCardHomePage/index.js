@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import {
   Card,
   CardActionArea,
@@ -14,10 +16,7 @@ export const PokemonCardHomePage = ({
   container,
 }) => {
   return (
-    <Card
-      sx={{ margin: "5px" }}
-      //className={container}
-    >
+    <Card sx={{ margin: "5px" }}>
       <CardActionArea
         className={container}
         sx={{ display: "flex", flexDescription: "column", padding: "30px" }}
@@ -40,4 +39,11 @@ export const PokemonCardHomePage = ({
       </CardActionArea>
     </Card>
   );
+};
+PokemonCardHomePage.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+  container: PropTypes.string.isRequired,
 };
