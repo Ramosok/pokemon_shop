@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/pokemon_shop/static/css/main.4603ebed.css",
-    "main.js": "/pokemon_shop/static/js/main.f831fab8.js",
+    "main.css": "/pokemon_shop/static/css/main.bdfb2521.css",
+    "main.js": "/pokemon_shop/static/js/main.6132c651.js",
     "static/media/Kalam-Bold.ttf": "/pokemon_shop/static/media/Kalam-Bold.c4671477e81c3c51ffc0.ttf",
     "static/media/Kalam-Light.ttf": "/pokemon_shop/static/media/Kalam-Light.26d8dba039c5c77b1ac3.ttf",
+    "static/media/footer.png": "/pokemon_shop/static/media/footer.b5def99a77f8cab6195e.png",
     "static/media/DEFENSE.png": "/pokemon_shop/static/media/DEFENSE.6728a28d27f40c3020ba.png",
     "static/media/ATTACK.png": "/pokemon_shop/static/media/ATTACK.88712fb9ee2db13e7d1e.png",
     "static/media/Scvirt.jpg": "/pokemon_shop/static/media/Scvirt.4d1b84d2a37bcc56d8e3.jpg",
@@ -22,11 +23,11 @@
     "static/media/Pika.jpg": "/pokemon_shop/static/media/Pika.5b5c615026a0b17d4e9e.jpg",
     "static/media/shopping-cart.png": "/pokemon_shop/static/media/shopping-cart.96c73cb49987ccdf1154.png",
     "index.html": "/pokemon_shop/index.html",
-    "main.4603ebed.css.map": "/pokemon_shop/static/css/main.4603ebed.css.map",
-    "main.f831fab8.js.map": "/pokemon_shop/static/js/main.f831fab8.js.map"
+    "main.bdfb2521.css.map": "/pokemon_shop/static/css/main.bdfb2521.css.map",
+    "main.6132c651.js.map": "/pokemon_shop/static/js/main.6132c651.js.map"
   },
   "entrypoints": [
-    "static/css/main.4603ebed.css",
-    "static/js/main.f831fab8.js"
+    "static/css/main.bdfb2521.css",
+    "static/js/main.6132c651.js"
   ]
 }
