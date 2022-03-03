@@ -41,3 +41,11 @@
   top: 56%;
   font-size: 20px;
 }
+@media (min-width: 360px) and (max-width: 785px) {
+  .card_container {
+    min-width:50%;
+  }
+  #card_img{
+    width: 90%;
+  }
+}

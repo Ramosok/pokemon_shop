@@ -2,8 +2,19 @@
   max-width: 1440px;
   width: 100%;
   height: 250px;
+  background-color:white;
   background-image: url("../../statics/footer.png");
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
-};
+}
+
+
+@media (min-width: 360px) and (max-width: 785px) {
+  .footer{
+    background-color:white;
+    max-height: 80px;
+    min-width: 360px;
+    background-size: contain;
+  }
+}

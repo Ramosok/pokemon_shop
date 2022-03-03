@@ -4,6 +4,7 @@ import { LOCAL_STORAGE_KEYS } from "../constants/localStorageData";
 
 import { GET_CART_REQUEST } from "../pages/Cart/actions";
 import { SIGN_IN_SUCCESS } from "../commonComponents/Login/actions";
+import { POST_ORDER_SUCCESS } from "../pages/User/actions";
 
 export function* loadCart() {
   const token = localStorage.getItem(LOCAL_STORAGE_KEYS.ACCESS_TOKEN);
@@ -14,4 +15,5 @@ export function* loadCart() {
 
 export function* loadingWatcher() {
   yield takeEvery(SIGN_IN_SUCCESS, loadCart);
+  yield takeEvery(POST_ORDER_SUCCESS, loadCart);
 }

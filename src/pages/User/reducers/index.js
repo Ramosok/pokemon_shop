@@ -2,10 +2,7 @@ import { combineActions, handleActions } from "redux-actions";
 import * as actions from "../actions";
 
 const defaultState = {
-  customerId: "",
-  totalPrice: 0,
-  quantity: 0,
-  itemsInCart: [],
+  orderItemsList: [],
   isLoading: false,
   error: null,
 };
@@ -23,11 +20,10 @@ export const orderPageReducer = handleActions(
         ...state,
       };
     },
-
     [actions.GET_ORDER_SUCCESS]: (state, { payload }) => {
-      console.log(payload);
       return {
         ...state,
+        orderItemsList: payload.response,
       };
     },
     [combineActions(actions.POST_ORDER_FAIL, actions.GET_ORDER_FAIL)]: (

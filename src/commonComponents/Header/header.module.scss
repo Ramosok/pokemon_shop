@@ -112,3 +112,11 @@ a {
   border-radius: 50%;
   color: #ffffff;
 }
+@media (min-width: 360px) and (max-width: 785px) {
+  .navbar {
+    a{
+      font-size: 9px;
+    }
+
+  }
+}

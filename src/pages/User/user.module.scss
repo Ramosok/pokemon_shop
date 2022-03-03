@@ -8,3 +8,23 @@
     border-bottom: 2px solid;
   }
 }
+.userAccountContainer {
+  display:flex;
+  justify-content:space-around;
+}
+.accordion_container {
+  background-color:white;
+  padding: 65px 10px;
+  width: 100%;
+}
+@media (min-width: 360px) and (max-width: 785px) {
+  .userAccountContainer {
+    display:flex;
+    flex-direction: column;
+  }
+  .accordion_container {
+    padding: 5px 10px;
+    margin-top: -40px;
+  }
+
+}

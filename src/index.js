@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 
@@ -20,11 +20,11 @@ ReactDOM.render(
   <StrictMode>
     <Provider store={store}>
       <PersistGate loading={<Loader />} persistor={persistor}>
-        <BrowserRouter>
+        <HashRouter>
           <Layout>
             <Router />
           </Layout>
-        </BrowserRouter>
+        </HashRouter>
       </PersistGate>
     </Provider>
   </StrictMode>,

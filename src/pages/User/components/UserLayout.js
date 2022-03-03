@@ -1,27 +1,35 @@
-import styles from "../user.module.scss";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { GET_ORDER_REQUEST } from "../actions";
+import PropTypes from "prop-types";
+import { UserInfoCard } from "./UserInfoCard";
+import { AccordionUserAccaunt } from "./AccordionUserAccaunt";
 
-export const UserLayout = ({ userData }) => {
+import styles from "../user.module.scss";
+
+export const UserLayout = ({ userData, orderItemsList }) => {
   const { firstName, lastName, phone, email, address } = userData;
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(GET_ORDER_REQUEST());
-  }, []);
+
   return (
-    <div className={styles.user_container}>
-      <div>
-        <h2>User info</h2>
-        <h3>First Name - {firstName}</h3>
-        <h3>Last Name - {lastName}</h3>
-        <h4>Phone - {phone}</h4>
-        <h4>Email - {email}</h4>
-        <h5>Country - {address.country}</h5>
-        <h5>City - {address.city}</h5>
-        <h5>Address Line one - {address.addressLine1}</h5>
-        <h5>Address Line two - {address.addressLine2}</h5>
+    <div className={styles.userAccountContainer}>
+      <UserInfoCard
+        firstName={firstName}
+        lastName={lastName}
+        phone={phone}
+        email={email}
+        address={address}
+      />
+      <div className={styles.accordion_container}>
+        {orderItemsList.map(({ createdAt, totalPrice, itemsList, _id }) => (
+          <AccordionUserAccaunt
+            key={_id}
+            createdAt={createdAt}
+            totalPrice={totalPrice}
+            itemsList={itemsList}
+          />
+        ))}
       </div>
     </div>
   );
+};
+UserLayout.propTypes = {
+  userData: PropTypes.object.isRequired,
+  orderItemsList: PropTypes.array.isRequired,
 };
